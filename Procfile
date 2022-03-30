@@ -1,1 +1,1 @@
-web: gunicorn nsi.wsgi --log-file -
+web: gunicorn KIROMBERO.wsgi --log-file -
