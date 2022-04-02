@@ -50,11 +50,11 @@ body {
   text-align: center;
   overflow: hidden;
   padding-top: 130px;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678)), color-stop(0%, rgba(3, 32, 77, 0.678))), url("/static/img/bg/bg1.jpg");
-  background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0%, rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/bg1.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678)), color-stop(0%, rgba(3, 32, 77, 0.678))), url("/static/img/bg/background.jpg");
+  background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0%, rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/background.jpg");
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678))), url("/static/img/bg/bg1.jpg");
-  background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0% rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/bg1.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678))), url("/static/img/bg/background.jpg");
+  background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0% rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/background.jpg");
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-position: center;
   background-size: cover;
@@ -160,11 +160,11 @@ img {
   height: 70vh;
   padding-top: 3rem;
   overflow: hidden;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925)), color-stop(0%, rgba(3, 32, 77, 0.925))), url("/static/img/bg/bg1.jpg");
-  background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0%, rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/bg1.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925)), color-stop(0%, rgba(3, 32, 77, 0.925))), url("/static/img/bg/background.jpg");
+  background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0%, rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/background.jpg");
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925))), url("/static/img/bg/bg1.jpg");
-  background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0% rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/bg1.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925))), url("/static/img/bg/background.jpg");
+  background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0% rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/background.jpg");
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-position: center;
   background-size: cover;
@@ -296,11 +296,11 @@ img {
     text-align: center;
     overflow: hidden;
     padding-top: 40px;
-    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678)), color-stop(0%, rgba(3, 32, 77, 0.678))), url("/static/img/bg/bg1.jpg");
-    background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0%, rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/bg1.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678)), color-stop(0%, rgba(3, 32, 77, 0.678))), url("/static/img/bg/background.jpg");
+    background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0%, rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/background.jpg");
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678))), url("/static/img/bg/bg1.jpg");
-    background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0% rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/bg1.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678))), url("/static/img/bg/background.jpg");
+    background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0% rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/background.jpg");
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-position: center;
     background-size: cover;
@@ -321,11 +321,11 @@ img {
     height: 70vh;
     padding-top: 3rem;
     overflow: scroll;
-    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925)), color-stop(0%, rgba(3, 32, 77, 0.925))), url("/static/img/bg/bg1.jpg");
-    background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0%, rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/bg1.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925)), color-stop(0%, rgba(3, 32, 77, 0.925))), url("/static/img/bg/background.jpg");
+    background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0%, rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/background.jpg");
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925))), url("/static/img/bg/bg1.jpg");
-    background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0% rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/bg1.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925))), url("/static/img/bg/background.jpg");
+    background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0% rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/background.jpg");
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-position: center;
     background-size: cover;
