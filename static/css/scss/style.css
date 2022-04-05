@@ -20,12 +20,21 @@ body {
   color: #d3d6d9;
 }
 
+.text-dark-green {
+  color: #04701b !important;
+}
+
 .bg-info-c {
   background-color: #00181c;
 }
 
 .bg-dark-blue {
   background-color: #202c45;
+}
+
+.bg-dark-green {
+  background-color: #04701b;
+  color: #d3d6d9;
 }
 
 .navbar-nav .nav-item a {
@@ -50,11 +59,11 @@ body {
   text-align: center;
   overflow: hidden;
   padding-top: 130px;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678)), color-stop(0%, rgba(3, 32, 77, 0.678))), url("/static/img/bg/background.jpg");
-  background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0%, rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/background.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 37, 8, 0.596)), color-stop(0%, rgba(0, 37, 8, 0.596))), url("/static/img/bg/background.jpg");
+  background: linear-gradient(90deg, rgba(0, 37, 8, 0.596) 0%, rgba(0, 37, 8, 0.596) 0%), url("/static/img/bg/background.jpg");
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678))), url("/static/img/bg/background.jpg");
-  background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0% rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/background.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 37, 8, 0.596))), url("/static/img/bg/background.jpg");
+  background: linear-gradient(90deg, rgba(0, 37, 8, 0.596) 0% rgba(0, 37, 8, 0.596) 0%), url("/static/img/bg/background.jpg");
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-position: center;
   background-size: cover;
@@ -64,6 +73,11 @@ body {
 .btn {
   border-radius: 0px;
   padding: 8px;
+}
+
+.btn-dark-green {
+  background-color: #04701b;
+  color: #f1f1f1;
 }
 
 .border {
@@ -92,7 +106,7 @@ img {
 }
 
 .header-line-1 {
-  border-bottom: 4px solid rgba(7, 17, 65, 0.685);
+  border-bottom: 4px solid rgba(241, 206, 5, 0.856);
   width: 6rem;
   margin-bottom: 20px;
 }
@@ -118,7 +132,7 @@ img {
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
   background-color: #f3f2f2;
-  background-color: #d44545;
+  background-color: #04701b;
   /* box-shadow: 0px 0px 1px 2px rgb(199, 199, 199); */
 }
 
@@ -160,11 +174,11 @@ img {
   height: 70vh;
   padding-top: 3rem;
   overflow: hidden;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925)), color-stop(0%, rgba(3, 32, 77, 0.925))), url("/static/img/bg/background.jpg");
-  background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0%, rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/background.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 37, 8, 0.801)), color-stop(0%, rgba(0, 37, 8, 0.801))), url("/static/img/bg/background.jpg");
+  background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0%, rgba(0, 37, 8, 0.801) 0%), url("/static/img/bg/background.jpg");
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925))), url("/static/img/bg/background.jpg");
-  background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0% rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/background.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 37, 8, 0.801))), url("/static/img/bg/background.jpg");
+  background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0% rgba(0, 37, 8, 0.801) 0%), url("/static/img/bg/background.jpg");
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-position: center;
   background-size: cover;
@@ -195,6 +209,14 @@ img {
   -webkit-box-shadow: 0px 2px 4px 1px;
           box-shadow: 0px 2px 4px 1px;
   border: none;
+}
+
+.btn-dark-yellow {
+  background-color: #cfaa02;
+  -webkit-box-shadow: 0px 2px 4px 1px;
+          box-shadow: 0px 2px 4px 1px;
+  border: none;
+  color: aliceblue;
 }
 
 .footer-icon:hover {
@@ -296,11 +318,11 @@ img {
     text-align: center;
     overflow: hidden;
     padding-top: 40px;
-    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678)), color-stop(0%, rgba(3, 32, 77, 0.678))), url("/static/img/bg/background.jpg");
-    background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0%, rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/background.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 37, 8, 0.801)), color-stop(0%, rgba(0, 37, 8, 0.801))), url("/static/img/bg/background.jpg");
+    background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0%, rgba(0, 37, 8, 0.801) 0%), url("/static/img/bg/background.jpg");
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 32, 77, 0.678))), url("/static/img/bg/background.jpg");
-    background: linear-gradient(90deg, rgba(3, 32, 77, 0.678) 0% rgba(3, 32, 77, 0.678) 0%), url("/static/img/bg/background.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 37, 8, 0.801))), url("/static/img/bg/background.jpg");
+    background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0% rgba(0, 37, 8, 0.801) 0%), url("/static/img/bg/background.jpg");
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-position: center;
     background-size: cover;
@@ -321,11 +343,11 @@ img {
     height: 70vh;
     padding-top: 3rem;
     overflow: scroll;
-    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925)), color-stop(0%, rgba(3, 32, 77, 0.925))), url("/static/img/bg/background.jpg");
-    background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0%, rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/background.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 37, 8, 0.801)), color-stop(0%, rgba(0, 37, 8, 0.801))), url("/static/img/bg/background.jpg");
+    background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0%, rgba(0, 37, 8, 0.801) 0%), url("/static/img/bg/background.jpg");
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-gradient(linear, left top, right top, from(rgba(3, 33, 77, 0.925))), url("/static/img/bg/background.jpg");
-    background: linear-gradient(90deg, rgba(3, 33, 77, 0.925) 0% rgba(3, 32, 77, 0.925) 0%), url("/static/img/bg/background.jpg");
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 37, 8, 0.801))), url("/static/img/bg/background.jpg");
+    background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0% rgba(0, 37, 8, 0.801) 0%), url("/static/img/bg/background.jpg");
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-position: center;
     background-size: cover;
@@ -339,8 +361,8 @@ img {
   }
   .border-mobile {
     /* border: 1px solid rgb(196, 196, 196); */
-    -webkit-box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
-            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+    -webkit-box-shadow: 0 0.15rem 1.75rem 0 rgba(0, 37, 8, 0.596) !important;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(0, 37, 8, 0.596) !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
