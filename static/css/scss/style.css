@@ -306,7 +306,7 @@ img {
     color: #04701b;
   }
   .navbar-toggler {
-    background-color: tomato;
+    color: white;
   }
   .header-img {
     /*background-image:url(" {% static 'img/header.jpg' %}");*/

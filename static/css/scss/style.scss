@@ -286,9 +286,11 @@ img {
     .navbar-toggler-icon {
         color: $green;
     }
+
     .navbar-toggler {
-        background-color: tomato;
+        color: white;
     }
+
     .header-img {
         /*background-image:url(" {% static 'img/header.jpg' %}");*/
         width: 100%;
