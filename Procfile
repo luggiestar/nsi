@@ -1,0 +1,1 @@
+web: gunicorn KIROMBERO.wsgi --log-file -

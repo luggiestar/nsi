@@ -1,0 +1,400 @@
+$green:#359f4c;
+$green-trans:#359f4c9a;
+$green_hover:#43ad5a;
+
+img {
+    max-width: 100%;
+}
+
+body {
+    line-height: 1.8;
+    color: #666;
+    font-size: 0.95rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+}
+
+.round{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.nav-link .sub {
+    display: none;
+}
+
+.text-light {
+    color: #d3d6d9;
+}
+
+.text-dark-green {
+    color: $green !important;
+}
+
+.bg-green-trans {
+    background-color: $green-trans;
+}
+
+.bg-info-c {
+    background-color: #00181c;
+}
+
+.bg-dark-blue {
+    background-color: #202c45;
+}
+
+.bg-dark-green {
+    background-color: $green;
+    color: #d3d6d9;
+}
+
+
+.navbar-nav .nav-item a{
+    color: #22293d;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.header-img h3{
+    letter-spacing: 10px;
+    color: aliceblue;
+    text-align: center;
+   
+}
+.header-img {
+    /*background-image:url(" {% static 'img/header.jpg' %}");*/
+    width: 100%;
+    letter-spacing: 1px;
+    margin-top: -2rem;
+    height: 30rem;
+    color: aliceblue;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 130px;
+    background: linear-gradient(90deg, rgba(0, 37, 8, 0.596) 0%, rgba(0, 37, 8, 0.596) 0%),url("/static/img/bg/background.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, rgba(0, 37, 8, 0.596) 0% rgba(0, 37, 8, 0.596) 0%), url("/static/img/bg/background.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn {
+    border-radius: 0px;
+    padding: 8px;
+}
+
+.btn-dark-green {
+    background-color: $green;
+    color: #f1f1f1;
+    transition: 1s ease;
+}
+
+.btn-dark-green:hover {
+    background-color: $green_hover;
+    color: #f1f1f1;
+}
+
+.border {
+    border: 1px solid gray ;
+}
+
+.text-black {
+    color: black;
+    font-size: 2em;
+}
+.fw-700 {
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+}
+.profile .picture {
+    width: 12rem;
+    margin: auto;
+}
+.profile .picture img{
+    border-radius: 1rem;
+}
+
+.header-line-1 {
+    border-bottom: 4px solid rgba(241, 206, 5, 0.856);
+    width: 6rem;
+    margin-bottom: 20px;
+}
+.event-balance {
+    width: 6rem;
+}
+.border-hover {
+    transition: 0.3s ease-in-out;
+}
+.border-hover:hover {
+    /* padding: 12px; */
+    border: 1px solid rgba(3, 29, 59, 0.568);
+    transition: 0.2s ease-in-out;
+}
+.list-group-item {
+    border: none;
+    transition: 0.2s ease-in;
+    background-color: rgb(243, 242, 242);
+    background-color: $green;
+    /* box-shadow: 0px 0px 1px 2px rgb(199, 199, 199); */
+}
+
+.list-group-item .inner {
+    border: none;
+    transition: 0.2s ease-in;
+    background-color: rgb(212, 69, 69);
+    box-shadow: 0px 0px 2px 2px rgb(199, 199, 199);
+}
+.list-group-item:hover {
+    border: none;
+    background-color: rgba(7, 17, 65, 0.685);
+    color: whitesmoke;
+    /* transition: 1s ease-in; */
+}
+
+.entry-time {
+    float: left;
+    padding: 5px 15px;
+    margin-right: 15px;
+    color:whitesmoke;
+    font-weight: 700;
+}
+
+.border-top {
+    border-top: 2px solid black;
+}
+
+.center-item {
+    margin: auto;
+}
+
+.footer {
+    width: 100%;
+    height: 70vh;
+    padding-top: 3rem;
+    overflow:hidden;
+    background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0%, rgba(0, 37, 8, 0.801) 0%),url("/static/img/bg/background.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0% rgba(0, 37, 8, 0.801) 0%), url("/static/img/bg/background.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.text-footer {
+    color: thistle !important;
+}
+
+
+.footer-icon {
+    /* background-color: rgb(1, 19, 48); */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 3px;
+    color: white;
+    font-size: 20px;
+    transform: rotateX(90);
+    transition: 0.5s linear all;
+}
+
+.btn-yellow {
+    background-color: yellow;
+    box-shadow: 0px 2px 4px 1px;
+    border: none;
+}
+
+.btn-dark-yellow {
+    background-color: rgb(207, 170, 2);
+    box-shadow: 0px 2px 4px 1px;
+    border: none;
+    color: aliceblue;
+}
+
+.footer-icon:hover {  
+    color: yellow;
+}
+
+.footer-list li {
+    padding-bottom: 10px;
+}
+
+.footer-text {
+    color: rgb(175, 173, 173);
+    transition: all 0.2s ease-in;
+}
+
+.footer-text:hover {
+    color: rgb(255, 255, 255); 
+}
+
+.footer-list li:hover {
+    padding-bottom: 10px;   
+}
+
+.text-yellow {
+    color:yellow !important;
+}
+
+.hr-yellow { 
+    background-color:yellow !important;
+}
+
+.hr-light { 
+    background-color:rgb(236, 236, 236);
+}
+
+.hr-gray { 
+    background-color:rgb(192, 192, 192);
+}
+
+.hr-danger { 
+    background-color:rgb(206, 56, 45);
+}
+
+.hr-yellow.hr-1 {
+    height:1px; 
+}
+
+.hr-yellow.hr-2 {
+    height:2px; 
+}
+
+.hr-yellow.hr-3 {
+    height:3px; 
+}
+
+
+.social-media-mobile span{
+    // margin-left: 2rem;
+    display: none;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+/* media query */
+@media (max-width: 413px) {
+    .nav-top {
+        display: none;
+    }
+    .institue-detail {
+        display: none;
+    }
+    .institute-name {
+        font-size: 13px;
+    }
+
+    .social-media-mobile span {
+        display: block;
+        margin-left: 2rem;
+    }
+    .navbar-toggler-icon {
+        color: $green;
+    }
+
+    .navbar-toggler {
+        color: white;
+    }
+
+    .heading-text {
+        font-size: 22px;
+        margin-top: -3rem;
+    }
+    .footer {
+        width: 100%;
+        height: 70vh;
+        padding-top: 3rem;
+        overflow:scroll;
+        background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0%, rgba(0, 37, 8, 0.801) 0%),url("/static/img/bg/background.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(90deg, rgba(0, 37, 8, 0.801) 0% rgba(0, 37, 8, 0.801) 0%), url("/static/img/bg/background.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .text-mobile {
+        font-size: small;
+    }
+    .welcome-note {
+        text-align: justify;
+    }
+    .border-mobile {
+        /* border: 1px solid rgb(196, 196, 196); */
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(0, 37, 8, 0.596) !important;
+    }
+}
+
+// pills 
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #47a04d;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+#kirombero {
+    max-height: 100%;
+}
+.carousel-inner{
+    width:100%;
+    max-height: 25rem !important;
+}
+.carousel-caption {
+    top: 50% !important;
+    transform: translateY(-50%);
+    bottom: initial;
+}
+
+
+  /* Smaller than standard 960 (devices and browsers) */
+// @media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+// @media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+/* All Mobile Sizes (devices and browser) */
+// @media only screen and (max-width: 767px) {}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+// @media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+    .carousel-caption {
+        width: 100%;
+        left:0%;
+        top: 70% !important;
+        transform: translateY(-20%);
+        bottom:inherit;
+    }
+    .carousel-caption h3 {
+        font-size: 18px;
+        font-weight: bolder;
+    }
+    .carousel-caption p {
+        font-size: 12px;
+    }
+    .carousel-indicators {
+        display: none;
+    }
+}
+
+// login
+.login-logo {
+    width: 6rem;
+    opacity: 1;
+    margin: auto;
+}

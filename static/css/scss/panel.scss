@@ -1,0 +1,105 @@
+$green:#359f4c;
+$green-trans:#359f4c9a;
+$green_hover:#43ad5a;
+$gray: gray;
+
+.skin-green .sidebar-menu > li.header {
+    color: #fff;
+    background: $green;
+}
+
+.bg-ligth-gray {
+    background-color: $gray;
+}
+
+.bg-green {
+    background-color: $green;
+}
+
+// inside drop down
+.skin-green .sidebar-menu > li.active > a {
+    color: #ffffff;
+    background: $green;
+    border-left-color: $green;
+}
+
+
+.skin-green .sidebar-menu > li > .treeview-menu {
+    margin: 0 1px;
+    background: $green;
+}
+
+//content
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+}
+
+.skin-green .treeview-menu > li > a {
+    color: #ffffff;
+}
+
+.box.box-primary {
+    border-top: none;
+}
+
+.skin-green .main-header .navbar .sidebar-toggle {
+    color: $green;
+}
+
+.text-green {
+    color: $green;
+}
+
+.actions {
+    margin-bottom: 3rem;
+    // border-bottom: 2px solid $blue;
+    padding: 2rem;
+    margin-top: -2rem;
+    margin-left: -1.7rem;
+}
+
+// import export
+.object-tools {
+    list-style-type: none;
+    margin-top: 5rem;
+    margin-left: -3.5rem;
+    margin-bottom: -8rem;
+}
+
+.object-tools li a{
+   float: left;
+   margin-left: 12px;
+   background-color: $green;
+   color: white;
+   padding: 7px;
+   border-radius: 2px;
+}
+
+.object-tools .btn.btn-success{
+    margin-top: 0.5px;
+    margin-left: 1rem;
+ }
+
+ .skin-green .main-header .logo {
+    background-color: $green;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-green .main-header .logo:hover {
+    background-color: $green;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-green .sidebar-menu > li > .treeview-menu {
+    margin: 0 1px;
+    background: #278738;
+}

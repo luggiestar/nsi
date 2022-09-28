@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="NSI | National Sugar Institute" />
+    <meta name="keywords" content="academy, course, education, elearning" />
+    <meta name="author" content="ThemeMascot" />
+
+    <link rel="shortcut icon" href="{% static 'img/logo2.png' %}" type="image/x-icon">   
+
+    <title>Home | National Sugar Institute</title>
+
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
+
+    <link rel="stylesheet" href="{% static '/css/scss/style.css' %}">
+
+    <link rel="stylesheet" href="{% static '/vendor/fontawesome-free/css/all.css' %}">
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- external javascripts -->
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+
+    <script src="{% static 'js/popper.min.js' %}"></script>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+
+    <style>
+     
+        .logo-size {
+            width: 70px;
+        }
+    </style>
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<body class="bg-lightd">
+<section class="nav-top">
+    <div class="bg-dark-green pb-3">
+        <div class="container d-flex justify-content-between">
+            <div class="pt-2 contact">
+                <div class="d-flex">
+                    <span class="contact-phone text-white ml-2"><i class="fa fa-phone font-icon text-yellow"></i> Tel: +255 232 935 482 | +255 692 010 101</span>
+                    <span class="contact-email text-white ml-2"><i class="fa fa-envelope font-icon text-yellow"></i> info@nsi.co.tz |</span>
+                    <span class="contact-address text-white ml-2"><i class="fa fa-map font-iconk text-yellow"></i> Kidatu, Morogoro - TANZANIA</span>
+                </div>
+            </div>
+            <div class="pt-2 pb-0">
+                <div class="d-flex social-media-top">
+                    <span><a class="text-white mr-3" href="#" ><i class="fa fa-facebook text-yellow"></i></a></span>
+                    <span><a class="text-white mr-3" href="#" ><i class="fa fa-twitter text-yellow"></i></a></span>
+                    <span><a class="text-white mr-3" href="#" ><i class="fa fa-youtube text-yellow"></i></a></span>
+                    <!-- <a href="ajax-load/form-appointment.html" class="btn btn-danger">Send an Enquiry</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-white p-2 institue-detail">
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <div class="logo-size">
+                <img src="{% static '/img/tz_logo.png' %}" alt="" width="100%">
+            </div>
+            <div class="title text-center">
+                <h2 class="text-center text-dark institute-name wow fadeIn" data-wow-duration="0.5s">NATIONAL SUGAR INSTITUTE</h2>
+                <h5 class="text-dark institute-name">For Future Of Our Nation</h5>
+            </div>
+            <div class="logo-size">
+                <img src="{% static '/img/logo2.png' %}" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+</section>
+<nav class="navbar navbar-expand-sm navbar-light bg-dark-green sticky-top" id="nav-color-change">
+    <button class="navbar-toggler text-white btn-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-navicon"></i>
+    </button>
+    <div class="d-flex social-media-mobile">
+        <span><a class="text-white mr-3" href="#" ><i class="fa fa-facebook text-dark-green "></i></a></span>
+        <span><a class="text-white mr-3" href="#" ><i class="fa fa-twitter text-dark-green "></i></a></span>
+        <span><a class="text-white mr-3" href="#" ><i class="fa fa-youtube text-dark-green "></i></a></span>
+    </div>
+    <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Links -->
+        <div  class="d-flex justify-content-center container main">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active-link text-light" href="{% url 'WEB:index' %}"><span>Home</span></a>
+<!--                        <ul class="sub">-->
+<!--                            <div class="container">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="">-->
+<!--                                        <img src="/img/logo-wide-white@2x.png" alt="">-->
+<!--                                        <li><i class="fa fa-angle-right"></i> This is Home sub</li>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </ul>-->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'WEB:about_us' %}"><span>About Us</span></a>
+<!--                        <ul class="sub">-->
+<!--                            <li>This is Abou sub</li>-->
+<!--                        </ul>-->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'WEB:all_programme' %}"><span>Programmes</span></a>
+<!--                        <ul class="sub">-->
+<!--                            <li>This is programme sub</li>-->
+<!--                        </ul>-->
+                </li>
+
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link text-light" href=""><span>Admission</span></a>#}
+<!--                        <ul class="sub">-->
+<!--                            <li>This is Admission sub</li>-->
+<!--                        </ul>-->
+{#                </li>#}
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'WEB:administration' %}"><span>Admistration</span></a>
+<!--                        <ul class="sub">-->
+<!--                            <li>This is Admission sub</li>-->
+<!--                        </ul>-->
+                </li>
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link text-light" href="#"><span>Short Courses</span></a>#}
+<!--                        <ul class="sub">-->
+<!--                            <li>This is Services sub</li>-->
+<!--                        </ul>-->
+{#                </li>#}
+
+                <!-- Dropdown -->
+{#                <li class="nav-item dropdown">#}
+{#                    <a class="nav-link text-light" href="#media" id="about-us" data-toggle="dropdown">#}
+{#                    <span>Media Center</span>#}
+{#                    </a>#}
+{#                </li>#}
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'WEB:login' %}"><span>Login</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+
+<!-- footer -->
+<footer class="footer mt-5">
+    <div class="container-fluid pl-5 pr-5 pt-5">
+        <div class="row">
+            <div class="col-md-3 col-xl-3 footer-about">
+                <img src="{% static '/img/logo-wide-white.png' %}" alt="" srcset="">
+                <p class="text-justify footer-text pt-3">The NSI is located in Kilombero district in Morogoro region. It is situated about 157 km from Morogoro town, 350 km from Dar es Salaam.</p>
+                <div class="footer-icons pt-2">
+                    <span class="footer-icon"> <i class="fa fa-facebook"></i> </span>
+                    <span class="footer-icon"> <i class="fa fa-twitter"></i> </span>
+                    <span class="footer-icon"> <i class="fab fa-youtube"></i> </span>
+                    <span class="footer-icon"> <i class="fa fa-instagram"></i> </span>
+                </div>
+            </div>
+            <div class="col-md-3 col-xl-3">
+                <h2 class="text-light">Quick Links</h2>
+                <hr class="hr-yellow hr-1">
+                <ul class="list-unstyled footer-list">
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> E-Mail</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> E-Office</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> Online Application</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> TanSep</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> SalarySlip Portal</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> ARIS</li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xl-3">
+                <h2 class="text-light">Related Links</h2>
+                <hr class="hr-yellow hr-1">
+                <ul class="list-unstyled footer-list">
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> Ministry of Agriculture</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> Sokoine University</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> Mtibwa Sugar</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> Bodi ya Sukari Tanzania</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> Utumishi</li>
+                    <li class="footer-text"><i class="fa fa-angle-right"></i> Bunge Website</li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xl-3">
+                <h2 class="text-light">Opening Hours</h2>
+                <hr class="hr-yellow hr-1">
+                <div class="opening-hours">
+                    <p class="footer-text">Friday - Saturday :10.00 am - 6.00 pm</p>
+                    <hr class="hr-gray">
+                    <p class="footer-text">Monday - Thusday :8.00 am - 9.00 pm</p>
+                    <hr class="hr-gray">
+                    <div class="d-flex justify-content-between text-light">
+                        <span class="footer-text">Sunday</span>
+                        <span class="footer-text">:Closed</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- copyright footer -->
+<div class="bg-dark-green copyright">
+    <div class="container pt-3">
+        <div class="d-flex justify-content-between">
+            <p class="text-light text-center text-mobile">&copy; 2020 NSI. All Rights Reserved.</p>
+            <span class="text-light text-mobile">Kidatu-Morogoro,Tanzania</span>
+        </div>
+    </div>
+</div>
+
+  <!-- The Modal -->
+<div class="modal fade" id="knowMore">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">PRINCIPAL'S WELCOME NOTE</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <center><img class="" src="{% static 'img/about/5.jpg' %}" alt="" width="100px"></center>
+                <p>
+                    I wish to welcome you to National Sugar Institute , which is the first and
+                    the best Public College for Sugar Production in Tanzania. We commend you for your interest
+                    to know about NSI and your curiosity will be satisfied as you go through this website,
+                    where you will find that NSI offers a variety of programmes in Sugarcane Plantation,
+                    Sugar harvesting and Production, Sugar packaging both degree
+                    and Non Degree levels. Our website reflects both old and newly established programmes.</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-dark-green" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+<script src="{% static 'js/wow.min.js' %}"></script>
+
+<script>
+$(function() {
+    $('.navbar-nav li').hover(
+        function() {
+            $('ul.sub', this).slideDown(500);
+        },
+        function() {
+            $('ul.sub', this).slideUp(300);
+        }
+    )
+});
+
+</script>
+
+<script type="text/javascript">
+    new WOW().init()
+</script>
+</body>
+</html>

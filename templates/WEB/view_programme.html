@@ -1,0 +1,20 @@
+{% extends 'WEB/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="p-5 container" style="background-color: aliceblue;">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">{{programme.name}}</h4>
+            <hr>
+            <h6>Programme Duration: <strong>{{programme.duration}} Year</strong></h6>
+            <h6>Programme Level: <strong>{{programme.category.name}} Year</strong></h6>
+            <h6>Programme Fee: <strong>{{programme.fee}} Year</strong></h6>
+            <hr>
+            <div>
+                {{programme.description|safe}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

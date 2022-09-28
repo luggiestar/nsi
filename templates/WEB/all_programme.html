@@ -1,0 +1,33 @@
+{% extends 'WEB/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="p-5 container" style="background-color: aliceblue;">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><strong>SN</strong></th>
+                        <th>Programme Name</th>
+                        <th>Level</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for programme in programme %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{programme.name}}</td>
+                        <td>{{programme.category.name}}</td>
+                        <td>
+                            <a href="{% url 'WEB:view_programme' programme.id  %}" class="btn btn-sm bg-dark-green text-light shadow">View Programme</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

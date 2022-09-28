@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="NSI | National Sugar Institute" />
+    <meta name="keywords" content="academy, course, education, elearning" />
+    <meta name="author" content="NSI" />
+
+    <link rel="shortcut icon" href="{% static 'img/logo2.png' %}" type="image/x-icon">   
+
+    <title>KACHS</title>
+   <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <link rel="apple-touch-icon" href="{% static 'img/MKUU.png'%}">
+    
+    <link rel="icon" href="{% static 'img/MKUU.png'%}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
+
+    <link rel="stylesheet" href="{% static '/css/scss/style.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+
+</head>
+<body id="page-top" class="body">
+
+    <div class="container pt-5 mt-5">
+        <div class="row justify-content-center">
+
+            <div class="col-xl-5 col-md-5 wow fadeIn">
+                <div class="">
+                    <div class="card">
+                        <div class="row">
+
+                            <div class="col-xl-12">
+                                <div class="card-header bg-white">
+                                    <div class="login-logo">
+                                        <img src="{% static 'img/logo2.png' %}" alt="logo">
+                                    </div>
+                                    <h5 class="text-center pt-2 text-color"><b>KIROMBERO WEBSITE</b></h5>
+                                </div>
+                                <div class="card-body bd-dark">
+                                    {% if messages %}
+                                    {% for message in messages %}
+                                    {% if message.tags == 'success' %}
+                                        <div class="alert alert-danger alert-dismissible wow fadeInDown">
+                                            <p class="text-center pt-4"><b><i class="icon fa fa-danger"></i>{{ message|capfirst }}</b></p>
+                                        </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+
+                                    <form class="mr-auto ml-md-3 my-2 my-md-0 mw-100" action="{% url 'WEB:login' %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="input-group shadow-sm mt-3 wow fadeIn" data-wow-delay="0.2s">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-white" type="button">
+                                                    <i class="fas fa-user fa-sm"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" name="username" class="form-control border-0 bg-white small" placeholder="username" required>
+                                        </div>
+                                        <div class="input-group shadow-sm mt-4 wow fadeIn" data-wow-delay="0.4s">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-white" type="button">
+                                                    <i class="fas fa-key fa-sm"></i>
+                                                </button>
+                                            </div>
+                                            <input type="password" name="password" class="form-control border-0 bg-white small" placeholder="password" required>
+                                        </div>
+                                        <div class="input-group mt-4 mb-5  bounceIn" >
+                                            <button type="submit" name="login"  class="btn-dark-green btn btn-block btn-color"> LogIn <i class="fa fa-sign-in-alt"></i>  </button>
+                                        </div>
+                                        <a href="{% url 'WEB:password_reset' %}"> Forgot password ? <span class="text-color">click here</span></a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script>
+    window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+}, 2000);
+</script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- others plugins -->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'js/mu.js' %}"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

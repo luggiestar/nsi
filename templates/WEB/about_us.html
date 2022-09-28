@@ -1,0 +1,41 @@
+{% extends 'WEB/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="p-5">
+    <div class="row">
+        <div class="col-md-3">
+            <h6>About us</h6>
+            <hr>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#our_history">Our History</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#ourfunction">Our Functions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#mission">Mission, Vision & Core Values</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane container active" id="our_history">
+                    <h5 class="text-uppercase">Our History</h5>
+                    <p>{{history_list.description|safe}}</p>
+                </div>
+                <div class="tab-pane container fade" id="ourfunction">
+                    <h5 class="text-uppercase">Our Functions</h5>
+                    <p>{{function_list.description|safe}}</p>
+                </div>
+                <div class="tab-pane container fade" id="mission">
+                    <h5 class="text-uppercase">Mission, Vision & Core Values</h5>
+                    <p>{{mission.description|safe}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

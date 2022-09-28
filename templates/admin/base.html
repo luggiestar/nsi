@@ -1,0 +1,537 @@
+{% load i18n static adminlte_options adminlte_menu %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% get_adminlte_settings as adminlte %}
+
+{% get_adminlte_option 'site_logo' as adminlte_site_logo  %}
+
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <!--<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href={% static "admin/ionicons/ionicons.min.css" %}>
+
+    {% block extrastyle %} {% endblock %}
+
+    {% block extrahead %} {% endblock %}
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'admin/dist/css/AdminLTE.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" crossorigin="anonymous">
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    {% if adminlte.skin %}
+    <link rel="stylesheet" href="{% static 'admin/dist/css/skins/skin-'|add:adminlte.skin|add:'.min.css' %}">
+    {% else %}
+    <link rel="stylesheet" href="{% static 'admin/dist/css/skins/_all-skins.css' %}">
+    {% endif %}
+
+    <link rel="stylesheet" href="{% static 'admin/dist/css/django.css' %} ">
+    {% if adminlte_site_logo.valid %}
+    <link rel="apple-touch-icon" href="{% static 'img/logo2.png' %}">
+    <link rel="icon" href="{% static 'img/logo2.png' %}">
+    {% else %}
+    <link rel="apple-touch-icon" href="admin/dist/img/default-log.svg">
+    <link rel="icon" href="{% static 'img/logo2.png' %}">
+    {% endif %}
+
+    <link rel="stylesheet" href="{% static '/css/scss/panel.css' %}">
+
+
+</head>
+<body class="hold-transition skin-{% if adminlte.skin %}{{ adminlte.skin }}{% else %}green{% endif %} sidebar-mini fixed" >
+
+<div class="wrapper">
+    {% if not is_popup %}
+    <header class="main-header bg-green">
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <span class="logo-lg ">
+                <b class="text-white">
+                    {% get_adminlte_option 'site_header' as adminlte_site_header  %}
+                    {% if adminlte_site_header.valid %}
+                    {{ adminlte_site_header.site_header }}
+                    {% else %}
+                        NSI WEBSITE
+                    {% endif %}
+                </b>
+            </span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+                {% block messages %}
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == 'success' %}
+                <div class="alert bg-green alert-dismissible  wow fadeInDown">
+                    <button type="button" class="close text-white" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times fa-sm" style="color:white"></i> </button>
+                    <h5><i class="icon fa fa-check"></i>{{ message|capfirst }}</h5>
+                </div>
+                {% elif message.tags == 'error' %}
+                <div class="alert alert-danger alert-dismissible  wow fadeInDown">
+                    <button type="button" class="close text-white" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times fa-sm" style="color:red"></i></button>
+                    <h5><i class="icon fa fa-ban"></i>{{ message|capfirst }}</h5>
+                </div>
+                {% elif message.tags == 'warning' %}
+                <div class="alert alert-warning alert-dismissible  wow fadeInDown">
+                    <button type="button" class="close text-white" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times fa-sm" style="color:red"></i></button>
+                    <h5><i class="icon fa fa-warning"></i>{{ message|capfirst }}</h5>
+                </div>
+                {% elif message.tags == 'info' %}
+                <div class="alert alert-info alert-dismissible  wow fadeInDown">
+                    <button type="button" class="close text-white" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times fa-sm" style="color:red"></i></button>
+                    <h5><i class="icon fa fa-info"></i>{{ message|capfirst }}</h5>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                {% endblock messages %}
+            <a href="#" class="sidebar-toggle white" data-toggle="offcanvas" >
+                <span class="h6" style="color: black"><b><i class="fa fa-user"></i> {{request.user.first_name}} {{request.user.middle_name}}. {{request.user.last_name}}{% if request.user.is_staff %} (<b class="mu-color"> ~{{request.user.title|upper}} </b>){% endif %}</b></span>
+            </a>
+
+
+            <div class="navbar-custom-menu" style="float: left;">
+                <ul class="nav navbar-nav top-menu">
+                    {% get_menu request 'top' as app_list %}
+                    {% if app_list %}
+                    {% for app in app_list %}
+                    <li class="dropdown user user-menu">
+                        <a href="{{ app.admin_url }}">
+                            <i class="fa {% if app.icon %} {{app.icon}} {% else %}fa-database{% endif %}"></i>
+                            {{ app.name }}</a>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {% get_adminlte_option 'show_avatar' as adminlte_show_avatar  %}
+                            {% if adminlte_show_avatar.valid and adminlte_show_avatar.show_avatar == 'on' %}
+                            {% get_adminlte_option 'avatar_field' request as adminlte_avatar_field  %}
+                            {% if adminlte_avatar_field.valid and adminlte_avatar_field.avatar_field %}
+                            <img src="{{ adminlte_avatar_field.avatar_field }}" class="user-image" alt="User Image" style="width: 25px; height:25px;">
+                            {% else %}
+                            <img src={% static "admin/dist/img/default.jpg" %} class="user-image" alt="User Image">
+                            {% endif %}
+                            {% endif %}
+                            <span class="hidden-xs bg-green btn btn-sm mu-color "> <b> <i class="fa fa-power-off"> </i> </b></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            {% get_adminlte_option 'show_avatar' as adminlte_show_avatar  %}
+                            {% if adminlte_show_avatar.valid and adminlte_show_avatar.show_avatar == 'on' %}
+                            <li class="user-header">
+                                {% get_adminlte_option 'avatar_field' request as adminlte_avatar_field  %}
+                                {% if adminlte_avatar_field.valid and adminlte_avatar_field.avatar_field %}
+                                <img src="{{ adminlte_avatar_field.avatar_field }}" class="img-circle" alt="User Image" style="width: 90px; height:90px;">
+                                {% else %}
+                                <img src={% static "admin/dist/img/default.jpg" %} class="img-circle" alt="User Image">
+                                {% endif %}
+                                <p>
+                                    {{ request.user.first_name }}-{{ request.user.last_name }} -
+                                    {% if request.user.is_superuser %}
+                                    {{request.session.position}}
+
+                                    {% else %}
+                                    {% if request.user.groups.all %}
+                                    {% for i in request.user.groups.all %}{{ i.name }}{% endfor %}
+                                    {% else %}
+                                   {{request.session.position}}
+                                    {% endif %}
+                                    {% endif %}
+                                </p>
+                            </li>
+                            {% else %}
+                            <li class="user-header" style="height: auto;">
+                                <p>
+                                    {{ request.user.first_name }}-{{ request.user.last_name }} -
+                                    {% if request.user.is_superuser %}
+                                    {{request.session.position}}
+                                    {% else %}
+                                    {% if request.user.groups.all %}
+                                    {% for i in request.user.groups.all %}{{ i.name }}{% endfor %}
+                                    {% else %}
+                                    {{request.session.position}}
+                                    {% endif %}
+                                    {% endif %}
+                                </p>
+                            </li>
+                            {% endif %}
+<li class="user-footer">
+                                {% if request.user.is_staff %}
+                                <div class="pull-left">
+                                    <a  href="#" class="btn bg-green btn-flat"><i class="fa fa-user"> </i> {% trans 'Person Profile' %}</a>
+                                </div>
+                                {% else %}
+                                <div class="pull-left">
+                                    <a  href="#" class="btn bg-green btn-flat"><i class="fa fa-user"> </i> {% trans 'Person Profile' %}</a>
+                                </div>
+                                {% endif %}
+                                <div class="pull-right">
+                                    <a href="{% url 'WEB:logout' %}" class="btn bg-green-orange btn-flat">{% trans 'Logout' %}</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar bg-green">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            {% get_adminlte_option 'show_avatar' as adminlte_show_avatar  %}
+            {% if adminlte_show_avatar.valid and adminlte_show_avatar.show_avatar == 'on' %}
+            <div class="user-panel">
+                <div class="pull-left image">
+                    {% get_adminlte_option 'avatar_field' request as adminlte_avatar_field  %}
+                    {% if adminlte_avatar_field.valid and adminlte_avatar_field.avatar_field %}
+                    <img src="{{ adminlte_avatar_field.avatar_field }}" class="img-circle" alt="User Image">
+                    {% else %}
+                    <img src={% static "admin/dist/img/default.jpg" %} class="img-circle" alt="User Image">
+                    {% endif %}
+                </div>
+                <div class="pull-left info">
+                    <p>{{ request.user.username }}</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> {% trans "Online" %}</a>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu bg-green">
+                {% if request.user.is_superuser %}
+                <li>
+                    <a id="adminIndex" href="{% url 'admin:index' %}" style="color: white;">
+                        <i class="fa fa-dashboard"></i> <span>{% trans 'Dashboard' %}</span>
+                    </a>
+                </li>
+                {% else %}
+                <li>
+                    <a id="adminIndex" href="#">
+                        <i class="fa fa-dashboard"></i> <span>{% trans 'Dashboard' %}</span>
+                    </a>
+                </li>
+                {% endif %}
+
+                {% if adminlte.main_navigation_app %}
+
+                {% get_menu request as app_list %}
+                {% if app_list %}
+                {% for app in app_list %}
+                {% if app.app_label == adminlte.main_navigation_app %}
+                {% for model in app.models %}
+                {% if model.admin_url %}
+                <li>
+                    <a href="{{ model.admin_url }}">
+                        <i class="fa {% if model.icon %} {{model.icon}} {% else %}fa-circle-o{% endif %}"></i> <span>{{ model.name }}</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+
+                {% endif %}
+
+                {% if adminlte.navigation_expanded %}
+
+                {% get_menu request as app_list %}
+                {% if app_list %}
+                {% for app in app_list %}
+                {% if not adminlte.show_apps or adminlte.show_apps and not app.app_label or app.app_label in adminlte.show_apps %}
+                {% if not app.app_label or app.app_label != adminlte.main_navigation_app %}
+                <li class="header">{{ app.name|upper }}</li>
+                {% for model in app.models %}
+                {% ifchanged %}
+                {% if model.admin_url %}
+
+                {% endif %}
+                {% endifchanged %}
+                {% endfor %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+
+                {% else %}
+
+                {% get_menu request as app_list %}
+                {% if app_list and  request.user.is_superuser %}
+                {% for app in app_list %}
+                {% if not adminlte.show_apps or adminlte.show_apps and not app.app_label or app.app_label in adminlte.show_apps %}
+                {% if not app.app_label or app.app_label != adminlte.main_navigation_app %}
+                <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                    <a href="{% if app.admin_url %}{{app.admin_url}}{% else %}javascript:void(0){% endif %}">
+                        <i class="fa {% if app.icon %} {{app.icon}} {% else %}fa-folder{% endif %}" style="color:azure ;"></i>
+                        <span style="overflow: hidden; display: inline-block; vertical-align:top; color: azure;">{{ app.name }}</span>
+                        {% if not app.admin_url %}
+                        <span class="pull-right-container">
+                                  <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                        {% endif %}
+                    </a>
+                    {% if not app.admin_url %}
+                    <ul class="treeview-menu">
+                        {% for model in app.models %}
+                        {% if model.admin_url %}
+                        <li><a href="{{ model.admin_url }}" ><i class="fa {% if model.icon %} {{model.icon}} {% else %}{% endif %}"></i>{{ model.name }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                {% endif %}
+                {% if   request.user.is_staff  %}
+
+{% if   request.user.title|upper == "ACCOUNTANT" or request.user.is_superuser %}
+                <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                    <a href="{% if app.admin_url %}{{app.admin_url}}{% else %}javascript:void(0){% endif %}">
+                        <i class="fa {% if app.icon %} {{app.icon}} {% else %}fa-sitemap{% endif %}" style="color: white;"></i>
+                        <span style="overflow: hidden; display: inline-block; vertical-align:top; color: white;"> &nbsp;&nbsp;NEWS</span>
+                        {% if not app.admin_url %}
+                        <span class="pull-right-container">
+                                  <i class="fa fa-angle-left  pull-right"></i></span>
+                        {% endif %}
+                    </a>
+                    {% if not app.admin_url %}
+
+                     <ul class="treeview-menu">
+
+                        <li><a href="{% url 'WEB:news_list' %}" ><i class="fa {% if model.icon %} {{model.icon}} {% else %}{% endif %}"></i>News List</a></li>
+
+                      {#   {% if request.user.is_superuser %} #}
+
+                   {% endif %}
+                    </ul>
+
+
+
+                    {% endif %}
+                </li>
+
+                {# {% endif %} #}
+
+                     {% if request.user.is_superuser %}
+
+                 <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                    <a href="{% if app.admin_url %}{{app.admin_url}}{% else %}javascript:void(0){% endif %}">
+                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-book-reader{% endif %}"  style="color: white;"></i>
+                            <span style="overflow: hidden; display: inline-block; vertical-align:top; color: white;"> &nbsp;&nbsp;EVENT</span>
+                        {% if not app.admin_url %}
+                        <span class="pull-right-container">
+                                  <i class="fa fa-angle-left pull-right"></i></span>
+                        {% endif %}
+                    </a>
+                    {% if not app.admin_url %}
+                    <ul class="treeview-menu">
+                        <li><a href="{%  url 'WEB:event_list' %}" ><i class="fa {% if model.icon %} {{model.icon}} {% else %}{% endif %}"></i>Event List</a></li>
+                    </ul>
+                    {% endif %}
+                </li>
+{% endif %}
+
+          {% if request.user.is_superuser %}
+
+                 <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                    <a href="{% if app.admin_url %}{{app.admin_url}}{% else %}javascript:void(0){% endif %}">
+                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-book-reader{% endif %}"  style="color: white;"></i>
+                            <span style="overflow: hidden; display: inline-block; vertical-align:top; color: white;"> &nbsp;&nbsp;DOWNLOADS</span>
+                        {% if not app.admin_url %}
+                        <span class="pull-right-container">
+                                  <i class="fa fa-angle-left pull-right"></i></span>
+                        {% endif %}
+                    </a>
+                    {% if not app.admin_url %}
+                    <ul class="treeview-menu">
+                        <li><a href="{%  url 'WEB:downloads_list' %}" ><i class="fa {% if model.icon %} {{model.icon}} {% else %}{% endif %}"></i>Document List</a></li>
+                    </ul>
+                    {% endif %}
+                </li>
+{% endif %}
+
+                   {% if request.user.is_superuser %}
+
+                 <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                    <a href="{% if app.admin_url %}{{app.admin_url}}{% else %}javascript:void(0){% endif %}">
+                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-book-reader{% endif %}"  style="color: white;"></i>
+                            <span style="overflow: hidden; display: inline-block; vertical-align:top; color: white;"> &nbsp;&nbsp;NEW LETTER</span>
+                        {% if not app.admin_url %}
+                        <span class="pull-right-container">
+                                  <i class="fa fa-angle-left pull-right"></i></span>
+                        {% endif %}
+                    </a>
+                    {% if not app.admin_url %}
+                    <ul class="treeview-menu">
+                        <li><a href="{%  url 'WEB:news_letter_list' %}" ><i class="fa {% if model.icon %} {{model.icon}} {% else %}{% endif %}"></i>New Letter List</a></li>
+                    </ul>
+                    {% endif %}
+                </li>
+                 <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                    <a href="{% if app.admin_url %}{{app.admin_url}}{% else %}javascript:void(0){% endif %}">
+                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-book-reader{% endif %}"  style="color: white;"></i>
+                            <span style="overflow: hidden; display: inline-block; vertical-align:top; color: white;"> &nbsp;&nbsp;REPORT</span>
+                        {% if not app.admin_url %}
+                        <span class="pull-right-container">
+                                  <i class="fa fa-angle-left pull-right"></i></span>
+                        {% endif %}
+                    </a>
+                    {% if not app.admin_url %}
+                    <ul class="treeview-menu">
+                        <li><a href="{%  url 'WEB:report_list' %}" ><i class="fa {% if model.icon %} {{model.icon}} {% else %}{% endif %}"></i>Report List</a></li>
+                    </ul>
+                    {% endif %}
+                </li>
+                 <li {% if not app.admin_url %}class="treeview"{% endif %}>
+                    <a href="{% if app.admin_url %}{{app.admin_url}}{% else %}javascript:void(0){% endif %}">
+                        <i class="fas {% if app.icon %} {{app.icon}} {% else %}fa-book-reader{% endif %}"  style="color: white;"></i>
+                            <span style="overflow: hidden; display: inline-block; vertical-align:top; color: white;"> &nbsp;&nbsp;PROGRAMME</span>
+                        {% if not app.admin_url %}
+                        <span class="pull-right-container">
+                                  <i class="fa fa-angle-left pull-right"></i></span>
+                        {% endif %}
+                    </a>
+                    {% if not app.admin_url %}
+                    <ul class="treeview-menu">
+                        <li><a href="{%  url 'WEB:programme_list' %}" ><i class="fa {% if model.icon %} {{model.icon}} {% else %}{% endif %}"></i>Programme List</a></li>
+                    </ul>
+                    {% endif %}
+                </li>
+{% endif %}
+
+
+
+
+                {% endif %}
+
+
+            </ul>
+        </section>
+    </aside>
+    {% endif %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" {% if is_popup %}style="margin-left:0px; padding-top: 0px;"{% endif %}>
+        <!-- Content Header (Page header) -->
+        <div class="d-sm-flex align-items-center justify-content-between bg-green" style="width: 100%; height: 20px; background-size: cover; margin-top:0px;">
+        </div>
+        {% block page_content %}
+
+        {% endblock %}
+    </div>
+    <!-- /.content-wrapper -->
+    {% if not is_popup %}
+    <footer class="main-footer">
+
+        <div class="pull-right hidden-xs">
+            <b>national Sugar Institute</b>
+        </div>
+        <strong>nsi &copy; {% now 'Y' %} </strong> All rights reserved.
+    </footer>
+
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+    {% endif %}
+</div>
+<!-- ./wrapper -->
+<script src={% static "admin/plugins/jQuery/jquery-2.2.3.min.js" %}></script>
+<!-- jQuery UI 1.11.4 -->
+<script src={% static "admin/plugins/jQueryUI/jquery-ui.min.js" %}></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.6 -->
+<script src={% static "admin/bootstrap/js/bootstrap.min.js" %}></script>
+<!-- Slimscroll -->
+<script src={% static "admin/plugins/slimScroll/jquery.slimscroll.min.js" %}></script>
+<!-- FastClick -->
+<script src={% static "admin/plugins/fastclick/fastclick.js" %}></script>
+<!-- AdminLTE App -->
+<script src={% static "admin/dist/js/app.min.js" %}></script>
+<!-- AdminLTE for demo purposes -->
+{% if adminlte.demo %}
+<script src={% static "admin/dist/js/demo.js" %}></script>
+{% endif %}
+<script>
+// use js control active status of siderbar-menu
+$(function() {
+    var menuActions = document.querySelectorAll('.sidebar-menu a')
+    for (var i in menuActions) {
+        var pathname = document.querySelector('#adminIndex').pathname
+
+        try {
+            if (window.location.pathname === pathname) {
+                menuActions[i].parentNode.setAttribute('class', 'active')
+                break
+            }
+
+            if (window.location.href.indexOf(menuActions[i].href) !== -1) {
+                if (menuActions[i].href===window.location.origin + pathname) {
+                    continue
+                }
+                console.log('menu matched.', window.location.href, menuActions[i].href);
+                menuActions[i].parentNode.setAttribute('class', 'active');
+                if (menuActions[i].parentNode.parentNode.getAttribute('class') !== 'sidebar-menu') {
+                    menuActions[i].parentNode.parentNode.setAttribute('class', 'treeview-menu menu-open');
+                    menuActions[i].parentNode.parentNode.parentNode.setAttribute('class', 'treeview active');
+                }
+                break
+            }
+        } catch (e) {
+            console.log(window.location.href, menuActions[i].href, e)
+        }
+    }
+
+    var topMenuActions = document.querySelectorAll('.top-menu a')
+    for (var j in topMenuActions) {
+        if (window.location.href.indexOf(topMenuActions[j].href) !== -1) {
+            topMenuActions[j].parentNode.setAttribute('class', 'active');
+            console.log('top menu matched.', window.location.href, topMenuActions[j].href);
+        }
+    }
+
+
+})
+</script>
+
+
+{% block extrajs %}{% endblock %}
+</body>
+</html>
