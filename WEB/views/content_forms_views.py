@@ -110,6 +110,8 @@ def report_form(request):
         'form': form,
     }
     return render(request, 'WEB/report_form.html', context)
+
+
 def programme_form(request):
     # get_type = Type.objects.filter(name="REPORT").first()
     if request.method == "POST":
