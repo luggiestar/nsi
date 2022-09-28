@@ -59,7 +59,7 @@
                         The National Sugar Institute (NSI) is an autonomous public training institution established through the
                         Sugar Industry Act. No. 26 of 2001, whereas main functions are to develop and carrying out training,
                         conducting research and carry out technical consultancy in order to improve productivity of the sugar industry.
-                        .....<a href="" class="text-green" data-target="#read_more" data-toggle="collapse"><strong>Read more</strong></a>
+                        <a href="" class="text-green" id="read_more" data-target="#read_more" data-toggle="collapse"><strong>.....Read more</strong></a>
                     </p>
 
                     <div id="read_more" class="collapse">
@@ -79,7 +79,8 @@
 
                         <p class="welcome-note">
                             To this end, Our customer’s satisfaction is indeed what we aim for!, we look forward to seeing you at National Sugar Institute.
-                        </p> 
+                            <a href="" class="text-green" id="read_less"><strong>Read Less</strong></a>
+                        </p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-4 mt-4 wow fadeInRight" data-wow-duration="1.5s">
@@ -295,4 +296,10 @@
         </section>
     </div>
 </div>
+
+    <script>
+        $('#read_me').click(function () {
+            $('#read_me').toggle()
+        })
+    </script>
 {% endblock %}

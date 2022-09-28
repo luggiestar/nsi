@@ -4,6 +4,7 @@ from ckeditor.fields import RichTextField
 CATEGORY = (
     ('history','Our history'),
     ('function','Our Function'),
+    ('governance','Governance'),
     ('mission','Mission, Vision & Core Values'),
 )
 

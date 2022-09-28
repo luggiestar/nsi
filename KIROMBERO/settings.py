@@ -96,12 +96,12 @@ WSGI_APPLICATION = 'KIROMBERO.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -133,19 +133,19 @@ DATABASES = {
 # }
 # Password validation
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'Mkuusecondary$MkuuSecondary',
-#         'USER': 'Mkuusecondary',
-#         'PASSWORD': 'Y@t8i2gJKSw3Jta',
-#         'HOST': 'Mkuusecondary.mysql.pythonanywhere-services.com',
-#         'PORT': '3306',
-#          'OPTIONS': {
-#             'sql_mode': 'traditional'
-#         },
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nsi_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+         'OPTIONS': {
+            'sql_mode': 'traditional'
+        },
+    }
+}
 TIME_INPUT_FORMATS = [
     '%H:%M'
 ]
